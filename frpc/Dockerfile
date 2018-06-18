@@ -1,10 +1,6 @@
 FROM alpine:latest
 MAINTAINER awyme qinmenghua@mail.com
 
-# Install root filesystem
-ADD ./rootfs /
-
-# Install base packages and frpc
 RUN apk --no-cache add curl jq apk bash tree tzdata && \
     cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime && \
     FRP_RELEASE_DATA=$(curl https://api.github.com/repos/fatedier/frp/releases/latest | jq -r '.assets[] | select(.name | contains("linux_386"))') && \
