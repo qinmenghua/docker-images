@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER awyme qinmenghua@mail.com
 
-RUN apk --no-cache add curl jq apk bash tree tzdata && \
+RUN apk --no-cache add curl jq bash tree tzdata && \
     cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime && \
     FRP_RELEASE_DATA=$(curl https://api.github.com/repos/fatedier/frp/releases/latest | jq -r '.assets[] | select(.name | contains("linux_386"))') && \
     FRP_TARBALL_FILE=$(echo $FRP_RELEASE_DATA | jq -r '.name') && \
