@@ -10,6 +10,6 @@ RUN apk --no-cache add curl jq bash tree tzdata && \
     tar zxf $FRP_TARBALL_FILE && \
     rm -f $FRP_TARBALL_FILE && \
     mv $(basename $FRP_TARBALL_FILE .tar.gz) /usr/local/frp && \
-    cp /usr/local/frp/frpc.ini /etc/frpc.ini
+    cp /usr/local/frp/frpc.ini /home/frpc.ini
 
-CMD ["/usr/local/frp/frpc", "-c", "/etc/frpc.ini"]
+CMD ["/usr/local/frp/frpc", "-c", "/home/frpc.ini"]
