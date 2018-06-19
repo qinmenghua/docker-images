@@ -1,5 +1,5 @@
 # frpc
-[frp](https://github.com/fatedier/frp) client for amd64 linux.
+[frp](https://github.com/qinmenghua/frp-docker-images) client for Qnap x86 linux.
 
 A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
 
@@ -7,5 +7,5 @@ A fast reverse proxy to help you expose a local server behind a NAT or firewall 
 
 # Run
 ``` sh
-docker run -d --name frpc --restart=always -v /path/to/frpc.ini:/etc/frpc.ini leonismoe/frpc
+docker run -d --name frpc --restart=always -v /path/to/frpc.ini:/home/frpc.ini qinmenghua/frpc
 ```
